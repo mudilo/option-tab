@@ -147,11 +147,6 @@ class Window {
 
     func focus() {
         if isWindowlessApp {
-            if let bundleID = application.runningApplication.bundleIdentifier {
-                NSWorkspace.shared.launchApplication(withBundleIdentifier: bundleID, additionalEventParamDescriptor: nil, launchIdentifier: nil)
-            } else {
-                application.runningApplication.activate(options: .activateIgnoringOtherApps)
-            }
         } else {
             // macOS bug: when switching to a System Preferences window in another space, it switches to that space,
             // but quickly switches back to another window in that space

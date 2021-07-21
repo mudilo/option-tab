@@ -1,10 +1,7 @@
-platform :osx, '10.12'
+platform :osx, '11.0'
 
 target 'alt-tab-macos' do
   use_frameworks!
-  pod 'LetsMove', :git => 'https://github.com/lwouis/LetsMove.git', :commit => '7abf4daed1a25218f2b52f2dfd190aee5a50071c'
-  pod 'Sparkle', :podspec => 'https://raw.githubusercontent.com/lwouis/Sparkle/master/Sparkle.podspec'
-  pod 'ShortcutRecorder', :git => 'https://github.com/Kentzo/ShortcutRecorder.git', :commit => 'f718220854575bad86fa89dd2bb3decd0b14b2b0'
-  pod 'SwiftyMarkdown', '1.1.0'
-  pod 'AppCenter/Crashes', '3.3.1'
+  pod 'ShortcutRecorder', :git => 'https://github.com/Kentzo/ShortcutRecorder.git', :commit => '2ea0fb333be102eb195716c63367b602a1b7b84f'
+  pod 'AppCenter', '~> 4.2.0'
 end

@@ -31,16 +31,14 @@ class PreferencesWindow: NSWindow, NSToolbarDelegate {
         toolbar!.delegate = self
         // toolbar breaks with the new default style on macOS 11; we force the classic style (see #914)
         if #available(OSX 11, *) { toolbarStyle = .expanded }
-        toolbar!.displayMode = .iconAndLabel
+        toolbar!.displayMode = .labelOnly
         toolbar!.showsBaselineSeparator = true
         [
             (0, NSLocalizedString("General", comment: ""), "general", GeneralTab.initTab()),
             (1, NSLocalizedString("Controls", comment: ""), "controls", ControlsTab.initTab()),
             (2, NSLocalizedString("Appearance", comment: ""), "appearance", AppearanceTab.initTab()),
-            (3, NSLocalizedString("Policies", comment: ""), "policies", PoliciesTab.initTab()),
-            (4, NSLocalizedString("Blacklists", comment: ""), "blacklists", BlacklistsTab.initTab()),
-            (5, NSLocalizedString("About", comment: ""), "about", AboutTab.initTab()),
-            (6, NSLocalizedString("Acknowledgments", comment: ""), "acknowledgments", AcknowledgmentsTab.initTab()),
+            (3, NSLocalizedString("Blacklists", comment: ""), "blacklists", BlacklistsTab.initTab()),
+            (4, NSLocalizedString("About", comment: ""), "about", AboutTab.initTab()),
         ]
             .forEach { makeToolbarItem($0.0, $0.1, $0.2, $0.3) }
 
@@ -60,7 +58,6 @@ class PreferencesWindow: NSWindow, NSToolbarDelegate {
         let id = NSToolbarItem.Identifier(rawValue: image)
         let item = NSToolbarItem(itemIdentifier: id)
         item.label = label
-        item.image = NSImage.initTemplateCopy(image)
         item.target = self
         item.action = #selector(tabItemClicked)
         let wrapView = NSView(frame: .zero)

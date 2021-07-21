@@ -1,49 +1,36 @@
 PODS:
-  - AppCenter/Core (3.3.1)
-  - AppCenter/Crashes (3.3.1):
+  - AppCenter (4.2.0):
+    - AppCenter/Analytics (= 4.2.0)
+    - AppCenter/Crashes (= 4.2.0)
+  - AppCenter/Analytics (4.2.0):
     - AppCenter/Core
-  - LetsMove (1.24)
-  - ShortcutRecorder (3.1)
-  - Sparkle (1.23.1)
-  - SwiftyMarkdown (1.1.0)
+  - AppCenter/Core (4.2.0)
+  - AppCenter/Crashes (4.2.0):
+    - AppCenter/Core
+  - ShortcutRecorder (3.3.0)
 
 DEPENDENCIES:
-  - AppCenter/Crashes (= 3.3.1)
-  - LetsMove (from `https://github.com/lwouis/LetsMove.git`, commit `7abf4daed1a25218f2b52f2dfd190aee5a50071c`)
-  - ShortcutRecorder (from `https://github.com/Kentzo/ShortcutRecorder.git`, commit `f718220854575bad86fa89dd2bb3decd0b14b2b0`)
-  - Sparkle (from `https://raw.githubusercontent.com/lwouis/Sparkle/master/Sparkle.podspec`)
-  - SwiftyMarkdown (= 1.1.0)
+  - AppCenter (~> 4.2.0)
+  - ShortcutRecorder (from `https://github.com/Kentzo/ShortcutRecorder.git`, commit `2ea0fb333be102eb195716c63367b602a1b7b84f`)
 
 SPEC REPOS:
   trunk:
     - AppCenter
-    - SwiftyMarkdown
 
 EXTERNAL SOURCES:
-  LetsMove:
-    :commit: 7abf4daed1a25218f2b52f2dfd190aee5a50071c
-    :git: https://github.com/lwouis/LetsMove.git
   ShortcutRecorder:
-    :commit: f718220854575bad86fa89dd2bb3decd0b14b2b0
+    :commit: 2ea0fb333be102eb195716c63367b602a1b7b84f
     :git: https://github.com/Kentzo/ShortcutRecorder.git
-  Sparkle:
-    :podspec: https://raw.githubusercontent.com/lwouis/Sparkle/master/Sparkle.podspec
 
 CHECKOUT OPTIONS:
-  LetsMove:
-    :commit: 7abf4daed1a25218f2b52f2dfd190aee5a50071c
-    :git: https://github.com/lwouis/LetsMove.git
   ShortcutRecorder:
-    :commit: f718220854575bad86fa89dd2bb3decd0b14b2b0
+    :commit: 2ea0fb333be102eb195716c63367b602a1b7b84f
     :git: https://github.com/Kentzo/ShortcutRecorder.git
 
 SPEC CHECKSUMS:
-  AppCenter: 76ecf7e959a68e36b0fd314e8dc5897660214423
-  LetsMove: fefe56bc7bc7fb7d37049e28a14f297961229fc5
-  ShortcutRecorder: fdf620aca34101b0cba3b10fca815e0459254189
-  Sparkle: ea073ba9c69cee3ebaab8685ba1e732e14d249f7
-  SwiftyMarkdown: 033abc9dad9a37903f81aec5188cade436f40520
+  AppCenter: 87ef6eefd8ade4df59e88951288587429f3dd2a5
+  ShortcutRecorder: 49b4c7f615133f02d0b23f91edfca9046ec0e1b3
 
-PODFILE CHECKSUM: 78df0a34910c4c031a65ac3b58dc004c21b552d0
+PODFILE CHECKSUM: be46a8d205ab5d47529c80e9d2f00abea661abfe
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1

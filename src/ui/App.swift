@@ -1,9 +1,7 @@
 import Cocoa
 import Darwin
-import LetsMove
 import ShortcutRecorder
-import AppCenterCrashes
-
+import AppCenter
 
 let cgsMainConnectionId = CGSMainConnectionID()
 
@@ -24,7 +22,6 @@ class App: AppCenterApplication, NSApplicationDelegate {
     var appIsBeingUsed = false
     var globalShortcutsAreDisabled = false
     var shortcutIndex = 0
-    var appCenterDelegate: AppCenterCrash?
     // multiple delayed display triggers should only show the ui when the last one triggers
     var delayedDisplayScheduled = 0
 
@@ -39,13 +36,9 @@ class App: AppCenterApplication, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        appCenterDelegate = AppCenterCrash()
         App.shared.disableRelaunchOnLogin()
         #if DEBUG
         UserDefaults.standard.set(true, forKey: "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints")
-        #endif
-        #if !DEBUG
-        PFMoveToApplicationsFolderIfNecessary()
         #endif
         AXUIElement.setGlobalTimeout()
         BackgroundWork.startSystemPermissionThread()
@@ -147,7 +140,7 @@ class App: AppCenterApplication, NSApplicationDelegate {
     }
 
     @objc func checkForUpdatesNow(_ sender: NSMenuItem) {
-        PoliciesTab.checkForUpdatesNow(sender)
+
     }
 
     @objc func showFeedbackPanel() {
